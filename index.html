@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- ============================================================
+       SEO METADATA — Edit title, description, and keywords below
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oindree Bal | Bioinformatics Researcher</title>
+  <meta name="description" content="Oindree Bal — M.Sc. Bioinformatics student at Garden City University. GAT-B 2025 AIR 99. Researcher in computational biology, immunoinformatics, molecular modeling, and vaccine design." />
+  <meta name="keywords" content="Oindree Bal, bioinformatics, computational biology, immunoinformatics, vaccine design, molecular docking, GAT-B 2025, Garden City University" />
+  <meta name="author" content="Oindree Bal" />
+
+  <!-- Open Graph (for link previews on LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:title" content="Oindree Bal | Bioinformatics Researcher" />
+  <meta property="og:description" content="M.Sc. Bioinformatics student | GAT-B 2025 AIR 99 | Computational Biology Researcher" />
+  <meta property="og:type" content="website" />
+  <!-- EDIT: Replace with your deployed URL -->
+  <meta property="og:url" content="https://yourusername.github.io" />
+
+  <!-- ============================================================
+       FAVICON — Replace favicon.png with your own 32x32 icon file
+       ============================================================ -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d9488'/><text y='22' x='6' font-size='18' fill='white'>OB</text></svg>" />
+
+  <!-- ============================================================
+       FONTS — Using Cormorant Garamond (display) + DM Sans (body)
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ================================================================
+       CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+       — Edit colors, fonts, spacing here to restyle the whole site
+       ================================================================ */
+    :root {
+      /* Typography */
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+
+      /* Spacing */
+      --section-padding: 7rem 0;
+      --container-max: 1100px;
+      --radius: 12px;
+      --radius-sm: 6px;
+
+      /* Transitions */
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* DARK THEME (default) */
+    [data-theme="dark"] {
+      --bg-primary: #0a0f0d;
+      --bg-secondary: #0f1612;
+      --bg-card: #131a16;
+      --bg-card-hover: #172019;
+      --border: rgba(13, 148, 136, 0.15);
+      --border-hover: rgba(13, 148, 136, 0.4);
+
+      --text-primary: #e8ede9;
+      --text-secondary: #8fa89a;
+      --text-muted: #566b60;
+
+      --accent: #0d9488;           /* teal — primary accent */
+      --accent-light: #14b8a6;     /* lighter teal */
+      --accent-dim: rgba(13, 148, 136, 0.12);
+      --accent-glow: rgba(13, 148, 136, 0.25);
+
+      --gold: #c9a84c;             /* amber — secondary accent */
+      --gold-dim: rgba(201, 168, 76, 0.1);
+
+      --nav-bg: rgba(10, 15, 13, 0.85);
+      --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(13,148,136,0.18) 0%, transparent 70%);
+    }
+
+    /* LIGHT THEME */
+    [data-theme="light"] {
+      --bg-primary: #f5f7f5;
+      --bg-secondary: #eef2ef;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f9fbf9;
+      --border: rgba(13, 148, 136, 0.18);
+      --border-hover: rgba(13, 148, 136, 0.45);
+
+      --text-primary: #111a14;
+      --text-secondary: #3d5247;
+      --text-muted: #7a9488;
+
+      --accent: #0d7a70;
+      --accent-light: #0d9488;
+      --accent-dim: rgba(13, 122, 112, 0.08);
+      --accent-glow: rgba(13, 122, 112, 0.2);
+
+      --gold: #9a6f1a;
+      --gold-dim: rgba(154, 111, 26, 0.08);
+
+      --nav-bg: rgba(245, 247, 245, 0.88);
+      --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(13,148,136,0.1) 0%, transparent 70%);
+    }
+
+    /* ================================================================
+       RESET & BASE
+       ================================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      transition: background var(--transition), color var(--transition);
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent-glow); color: var(--accent-light); }
+
+    a { color: var(--accent-light); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--accent); }
+
+    img { max-width: 100%; display: block; }
+
+    /* ================================================================
+       LAYOUT UTILITIES
+       ================================================================ */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { padding: var(--section-padding); }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.4;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      max-width: 580px;
+      font-size: 1.05rem;
+      font-weight: 300;
+      margin-bottom: 3.5rem;
+    }
+
+    /* Fade-in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================================================================
+       NAVIGATION
+       ================================================================ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .nav-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text-secondary);
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* Theme toggle */
+    .theme-toggle {
+      background: var(--accent-dim);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      width: 52px; height: 28px;
+      cursor: pointer;
+      position: relative;
+      transition: background var(--transition), border-color var(--transition);
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--border-hover); }
+    .theme-toggle .knob {
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 22px; height: 22px;
+      background: var(--accent);
+      border-radius: 50%;
+      transition: transform var(--transition);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+    }
+    [data-theme="light"] .theme-toggle .knob { transform: translateX(24px); }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 22px; height: 2px;
+      background: var(--text-secondary);
+      border-radius: 2px;
+      transition: var(--transition);
+      display: block;
+    }
+
+    .nav-controls { display: flex; align-items: center; gap: 1rem; }
+
+    /* ================================================================
+       HERO SECTION
+       ================================================================ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 7rem 0 4rem;
+    }
+
+    /* Animated molecular network canvas background */
+    #molecular-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: var(--hero-gradient);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent-light);
+    }
+
+    .hero-pronouns {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-headline {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 500px;
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .hero-location {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--accent-light);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-hover);
+      color: var(--text-primary);
+    }
+    .btn-outline:hover {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    /* Social links in hero */
+    .hero-socials {
+      display: flex;
+      gap: 1rem;
+    }
+    .social-link {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      transition: all var(--transition);
+    }
+    .social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent-light);
+      background: var(--accent-dim);
+    }
+
+    /* Profile photo card */
+    .hero-photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .photo-frame {
+      position: relative;
+      width: 260px; height: 300px;
+    }
+    .photo-frame::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px; bottom: -1px;
+      border-radius: calc(var(--radius) + 2px);
+      background: linear-gradient(135deg, var(--accent) 0%, transparent 50%, var(--gold) 100%);
+      z-index: 0;
+    }
+    .photo-inner {
+      position: absolute;
+      inset: 2px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-card);
+      z-index: 1;
+    }
+
+    /* ================================================================
+       PLACEHOLDER PROFILE IMAGE — Replace img src with your photo
+       ================================================================ */
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-secondary);
+      gap: 0.75rem;
+    }
+    .photo-placeholder-icon {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      border: 2px dashed var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    .photo-placeholder p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      font-family: var(--font-mono);
+    }
+
+    .gat-badge {
+      background: var(--gold-dim);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 50px;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    /* ================================================================
+       STATS SECTION (Animated Counters)
+       ================================================================ */
+    #stats {
+      padding: 3.5rem 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .stat-card {
+      background: var(--bg-secondary);
+      padding: 2rem 1.25rem;
+      text-align: center;
+      position: relative;
+      transition: background var(--transition);
+    }
+    .stat-card:hover { background: var(--bg-card); }
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 40px; height: 2px;
+      background: var(--accent);
+      transition: transform var(--transition);
+    }
+    .stat-card:hover::after { transform: translateX(-50%) scaleX(1); }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--accent-light);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      line-height: 1.4;
+    }
+
+    /* ================================================================
+       ABOUT SECTION
+       ================================================================ */
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    /* Research interests tags */
+    .interests-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    .tags-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* EDIT: Add/remove research interest tags here */
+    .tag {
+      padding: 0.35rem 0.9rem;
+      background: var(--accent-dim);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-weight: 400;
+    }
+    .tag:hover, .tag.active {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent-light);
+    }
+
+    /* Skills visualization */
+    .skills-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .skills-panel-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .skill-item {
+      margin-bottom: 1.2rem;
+    }
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+    .skill-bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      border-radius: 4px;
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ================================================================
+       EDUCATION TIMELINE
+       ================================================================ */
+    #education { background: var(--bg-secondary); }
+
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 1px;
+      background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .timeline-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.9rem;
+      top: 6px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--accent);
+      transition: background var(--transition);
+    }
+    .timeline-item:hover .timeline-dot { background: var(--accent); }
+    .timeline-item.current .timeline-dot {
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+
+    .timeline-period {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-institution {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-degree {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.25rem 0.7rem;
+      background: var(--accent-dim);
+      border-radius: 50px;
+      color: var(--accent-light);
+      letter-spacing: 0.04em;
+    }
+    .meta-badge.gold {
+      background: var(--gold-dim);
+      color: var(--gold);
+    }
+
+    /* ================================================================
+       ACHIEVEMENTS
+       ================================================================ */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .achievement-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .achievement-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(180deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .achievement-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+    .achievement-card:hover::before { opacity: 1; }
+
+    .achievement-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--gold-dim);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .achievement-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .achievement-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ================================================================
+       RESEARCH PROJECTS
+       ================================================================ */
+    #research { background: var(--bg-secondary); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+    }
+    .project-card:hover::after { opacity: 1; }
+
+    .project-card-inner { position: relative; z-index: 1; }
+
+    .project-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .project-status::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+    }
+    .project-tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      background: var(--accent-dim);
+      color: var(--accent-light);
+      border-radius: 50px;
+      font-family: var(--font-mono);
+    }
+
+    /* ================================================================
+       PUBLICATIONS
+       ================================================================ */
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .pub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .pub-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .pub-header {
+      padding: 1.75rem 2rem;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .pub-year {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+    .pub-journal {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .pub-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .pub-toggle {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted);
+      font-size: 1rem;
+      transition: all var(--transition);
+      flex-shrink: 0;
+      background: none;
+      cursor: pointer;
+    }
+    .pub-card.expanded .pub-toggle {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: rotate(45deg);
+    }
+
+    .pub-abstract {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pub-card.expanded .pub-abstract { max-height: 300px; }
+
+    .pub-abstract-inner {
+      padding: 0 2rem 1.75rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ================================================================
+       FUTURE RESEARCH PLACEHOLDER SECTION
+       ================================================================ */
+    #future { background: var(--bg-secondary); }
+
+    .future-placeholder {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      transition: border-color var(--transition);
+    }
+    .future-placeholder:hover { border-color: var(--border-hover); }
+
+    .future-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      opacity: 0.4;
+    }
+
+    .future-placeholder h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+    .future-placeholder p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 450px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Future items that can be uncommented and filled in */
+    .future-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* ================================================================
+       GITHUB SECTION
+       ================================================================ */
+    #github {
+      text-align: center;
+    }
+
+    .github-card {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      text-align: center;
+    }
+    .github-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.25rem;
+      opacity: 0.6;
+    }
+    .github-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+    .github-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    /* ================================================================
+       CONTACT SECTION
+       ================================================================ */
+    #contact { background: var(--bg-secondary); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all var(--transition);
+      font-size: 0.9rem;
+    }
+    .contact-link-item:hover {
+      border-color: var(--accent);
+      color: var(--accent-light);
+      background: var(--accent-dim);
+      transform: translateX(4px);
+    }
+    .contact-link-item .icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form-note {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 1.5rem;
+      letter-spacing: 0.06em;
+    }
+
+    /* ================================================================
+       FOOTER
+       ================================================================ */
+    footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+    }
+    .footer-left span { color: var(--accent); }
+
+    .footer-right {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* ================================================================
+       MOBILE NAVIGATION DRAWER
+       ================================================================ */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--bg-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform var(--transition-slow);
+    }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    /* ================================================================
+       SCROLL TO TOP
+       ================================================================ */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all var(--transition);
+      z-index: 500;
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+    .scroll-top.visible { opacity: 1; transform: translateY(0); }
+    .scroll-top:hover { background: var(--accent-light); }
+
+    /* ================================================================
+       RESPONSIVE BREAKPOINTS
+       ================================================================ */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-photo-wrap {
+        display: none; /* Hide photo on small screens; show text only */
+      }
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      #about .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --section-padding: 4.5rem 0; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { justify-content: center; }
+      .pub-header { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ================================================================
+     MOBILE MENU
+     ================================================================ -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#education" onclick="closeMobileMenu()">Education</a>
+  <a href="#research" onclick="closeMobileMenu()">Research</a>
+  <a href="#publications" onclick="closeMobileMenu()">Publications</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- ================================================================
+     NAVIGATION BAR
+     Edit nav-links to add/remove menu items
+     ================================================================ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Oindree <span>Bal</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <!-- Dark/Light mode toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+        <div class="knob" id="theme-knob">
+          <span id="theme-icon">🌙</span>
+        </div>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ================================================================
+     HERO SECTION
+     ================================================================ -->
+<section id="hero">
+  <!-- Animated molecular network background canvas -->
+  <canvas id="molecular-canvas" aria-hidden="true"></canvas>
+  <div class="hero-gradient"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-tag">Bioinformatics Researcher</p>
+
+        <!-- EDIT: Name -->
+        <h1 class="hero-name">Oindree<br><em>Bal</em></h1>
+        <p class="hero-pronouns">she / her</p>
+
+        <!-- EDIT: Headline -->
+        <p class="hero-headline">
+          M.Sc. Bioinformatics Student · Computational Biology Researcher ·
+          GAT-B 2025 All India Rank 99
+        </p>
+
+        <!-- EDIT: Location -->
+        <p class="hero-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          Bengaluru, Karnataka, India
+        </p>
+
+        <div class="hero-actions">
+          <!-- EDIT: Replace href with your actual CV file path -->
+          <a href="Oindree_Bal_CV.pdf" download class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download CV
+          </a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          <a href="#research" class="btn btn-outline">View Research</a>
+        </div>
+
+        <div class="hero-socials">
+          <!-- EDIT: Update href values with your actual links -->
+          <a href="mailto:oindreebal@gmail.com" class="social-link" aria-label="Email" title="Email">
+            ✉
+          </a>
+          <a href="https://www.linkedin.com/in/oindree-b-294705216" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+            in
+          </a>
+          <!-- GitHub link — EDIT once you have a GitHub profile -->
+          <a href="#github" class="social-link" aria-label="GitHub" title="GitHub (coming soon)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.42 7.86 10.95.58.1.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11.03 11.03 0 0 1 2.89-.39c.98.01 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.15v3.19c0 .31.21.66.8.55C20.2 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- PROFILE PHOTO — Replace contents of .photo-placeholder with an <img> tag -->
+      <div class="hero-photo-wrap">
+        <div class="photo-frame">
+          <div class="photo-inner">
+            <!--
+              TO ADD YOUR PHOTO:
+              1. Place your photo file (e.g., photo.jpg) in the same folder as index.html
+              2. Delete the .photo-placeholder div below
+              3. Add: <img src="photo.jpg" alt="Oindree Bal" style="width:100%;height:100%;object-fit:cover;" />
+            -->
+            <img src="photo.jpeg"
+                alt="Oindree Bal"
+                style="width:100%; height:100%; object-fit:cover;">
+          </div>
+        </div>
+        <span class="gat-badge">⭐ GAT-B 2025 · AIR 99</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     STATISTICS SECTION (Animated Counters)
+     EDIT: Change stat values or labels below
+     ================================================================ -->
+<section id="stats" aria-label="Key statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <span class="stat-value" data-target="99" data-prefix="AIR ">0</span>
+        <span class="stat-label">GAT-B 2025<br>All India Rank</span>
+      </div>
+      <div class="stat-card fade-in">
+        <span class="stat-value" data-text="M.Sc">M.Sc</span>
+        <span class="stat-label">Bioinformatics<br>Garden City University</span>
+      </div>
+      <div class="stat-card fade-in">
+        <span class="stat-value" data-target="2">0</span>
+        <span class="stat-label">Peer-Reviewed<br>Publications</span>
+      </div>
+      <div class="stat-card fade-in">
+        <span class="stat-value" data-target="3">0</span>
+        <span class="stat-label">Ongoing Research<br>Projects</span>
+      </div>
+      <div class="stat-card fade-in">
+        <span class="stat-value" data-target="93.85" data-suffix="%" data-decimal="2">0</span>
+        <span class="stat-label">First Semester<br>M.Sc. Grade</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     ABOUT SECTION
+     EDIT: Update the paragraphs and research interest tags
+     ================================================================ -->
+<section id="about">
+  <div class="container">
+    <p class="section-label fade-in">About</p>
+    <h2 class="section-title fade-in">Bridging biology<br>and computation.</h2>
+
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>
+          I'm an M.Sc. Bioinformatics student at Garden City University who enjoys exploring
+          the intersection of biology, data, and computation. My interests span computational
+          biology, immunoinformatics, molecular modeling, vaccine design, and biomedical data analysis.
+        </p>
+        <p>
+          With a background that blends biotechnology, zoology, and bioinformatics, I enjoy
+          translating biological questions into computational solutions. I've worked on projects
+          involving literature research, scientific writing, immunoinformatics-driven vaccine design,
+          molecular docking, sequence analysis, and other bioinformatics workflows aimed at
+          understanding diseases and identifying potential therapeutic strategies.
+        </p>
+        <p>
+          When I'm not buried in datasets, protein structures, or research papers, I'm usually
+          learning new computational tools and exploring emerging applications of AI and
+          bioinformatics in healthcare and drug discovery.
+        </p>
+        <p>
+          I'm always excited to connect with researchers, students, and professionals, and I'm
+          actively seeking research opportunities, collaborations, internships, and projects in
+          bioinformatics, computational biology, drug discovery, and related life science fields.
+        </p>
+
+        <!-- EDIT: Add or remove research interest tags -->
+        <p class="interests-title">Research Interests</p>
+        <div class="tags-grid" role="list">
+          <span class="tag" role="listitem" tabindex="0">Computational Biology</span>
+          <span class="tag" role="listitem" tabindex="0">Immunoinformatics</span>
+          <span class="tag" role="listitem" tabindex="0">Vaccine Design</span>
+          <span class="tag" role="listitem" tabindex="0">Molecular Docking</span>
+          <span class="tag" role="listitem" tabindex="0">Molecular Modeling</span>
+          <span class="tag" role="listitem" tabindex="0">Sequence Analysis</span>
+          <span class="tag" role="listitem" tabindex="0">Drug Discovery</span>
+          <span class="tag" role="listitem" tabindex="0">Cancer Genomics</span>
+          <span class="tag" role="listitem" tabindex="0">Structural Bioinformatics</span>
+          <span class="tag" role="listitem" tabindex="0">AI in Healthcare</span>
+          <span class="tag" role="listitem" tabindex="0">Biomedical Data Analysis</span>
+          <span class="tag" role="listitem" tabindex="0">Whole Exome Sequencing</span>
+        </div>
+      </div>
+
+      <!-- EDIT: Update skill names and percentages -->
+      <div class="skills-panel fade-in">
+        <p class="skills-panel-title">Computational Skills</p>
+
+        <div class="skill-item">
+          <div class="skill-header"><span>Bioinformatics Workflows</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>Immunoinformatics & Epitope Prediction</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>Molecular Docking & Modeling</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>Sequence Analysis (BLAST, ClustalW)</span><span>82%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>Scientific Writing & Literature Review</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>Python / R (Bioanalysis)</span><span>65%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>Whole Exome Sequencing Analysis</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     EDUCATION SECTION
+     EDIT: Add/update education entries in the timeline below
+     ================================================================ -->
+<section id="education">
+  <div class="container">
+    <p class="section-label fade-in">Education</p>
+    <h2 class="section-title fade-in">Academic journey.</h2>
+    <p class="section-subtitle fade-in">A foundation across biotechnology, zoology, and computational biology.</p>
+
+    <div class="timeline fade-in" role="list">
+
+      <!-- EDIT: Education Entry 1 (most recent first) -->
+      <div class="timeline-item current" role="listitem">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">September 2025 – Present</p>
+        <h3 class="timeline-institution">Garden City University</h3>
+        <p class="timeline-degree">Master of Science (M.Sc.) · Bioinformatics</p>
+        <div class="timeline-meta">
+          <span class="meta-badge">Grade: O</span>
+          <span class="meta-badge gold">93.85% — Sem I</span>
+          <span class="meta-badge">Currently Enrolled</span>
+        </div>
+      </div>
+
+      <!-- EDIT: Education Entry 2 -->
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">August 2022 – June 2025</p>
+        <h3 class="timeline-institution">Jyoti Nivas College Autonomous, Bangalore</h3>
+        <p class="timeline-degree">Bachelor of Science (B.Sc.) · Biotechnology & Zoology</p>
+        <div class="timeline-meta">
+          <span class="meta-badge gold">CGPA 9.37</span>
+        </div>
+      </div>
+
+      <!-- EDIT: Education Entry 3 -->
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">2020 – 2022</p>
+        <h3 class="timeline-institution">Delhi Public School, Ruby Park</h3>
+        <p class="timeline-degree">Higher Secondary (PCMB) · Class XII</p>
+        <div class="timeline-meta">
+          <span class="meta-badge">89.75%</span>
+        </div>
+      </div>
+
+      <!-- EDIT: Education Entry 4 -->
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot"></div>
+        <p class="timeline-period">2008 – 2020</p>
+        <h3 class="timeline-institution">St. Teresa's School</h3>
+        <p class="timeline-degree">Secondary Education · Class X</p>
+        <div class="timeline-meta">
+          <span class="meta-badge">92.6%</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     HONORS & ACHIEVEMENTS SECTION
+     EDIT: Add/remove achievement cards
+     ================================================================ -->
+<section id="achievements">
+  <div class="container">
+    <p class="section-label fade-in">Honors</p>
+    <h2 class="section-title fade-in">Achievements.</h2>
+    <p class="section-subtitle fade-in">Recognition across academics, research, and competitive examinations.</p>
+
+    <div class="achievements-grid">
+
+      <!-- EDIT: Achievement 1 -->
+      <div class="achievement-card fade-in">
+        <div class="achievement-icon" aria-hidden="true">🏆</div>
+        <h3 class="achievement-title">GAT-B 2025 — All India Rank 99</h3>
+        <p class="achievement-subtitle">
+          Qualified Graduate Aptitude Test in Biology 2025, securing an All India Rank of 99 among
+          candidates from across the country.
+        </p>
+      </div>
+
+      <!-- EDIT: Achievement 2 -->
+      <div class="achievement-card fade-in">
+        <div class="achievement-icon" aria-hidden="true">🎖️</div>
+        <h3 class="achievement-title">Highest Aggregate — Zoology</h3>
+        <p class="achievement-subtitle">
+          Special award for the Highest Aggregate Marks in all semesters in Zoology, conferred by
+          Dr. Sitavi Yathiender, former Head of the Department of Zoology and Genetics and Chief
+          Coordinator of Science, Jyoti Nivas College.
+        </p>
+      </div>
+
+      <!-- EDIT: Achievement 3 -->
+      <div class="achievement-card fade-in">
+        <div class="achievement-icon" aria-hidden="true">📘</div>
+        <h3 class="achievement-title">Subject Proficiency — Biotechnology</h3>
+        <p class="achievement-subtitle">
+          Subject Proficiency Award for outstanding performance in Biotechnology at Jyoti Nivas
+          College Autonomous, Bangalore.
+        </p>
+      </div>
+
+      <!-- EDIT: Achievement 4 -->
+      <div class="achievement-card fade-in">
+        <div class="achievement-icon" aria-hidden="true">🔬</div>
+        <h3 class="achievement-title">Subject Proficiency — Zoology</h3>
+        <p class="achievement-subtitle">
+          Subject Proficiency Award for outstanding performance in Zoology at Jyoti Nivas College
+          Autonomous, Bangalore.
+        </p>
+      </div>
+
+      <!-- EDIT: Achievement 5 -->
+      <div class="achievement-card fade-in">
+        <div class="achievement-icon" aria-hidden="true">💡</div>
+        <h3 class="achievement-title">Innovation Mela 2025 — 2nd Position</h3>
+        <p class="achievement-subtitle">
+          Secured Second Position at Innovation Mela 2025, recognising innovation and research
+          excellence in the life sciences.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     RESEARCH PROJECTS SECTION
+     EDIT: Add or update project cards
+     ================================================================ -->
+<section id="research">
+  <div class="container">
+    <p class="section-label fade-in">Research</p>
+    <h2 class="section-title fade-in">Active projects.</h2>
+    <p class="section-subtitle fade-in">Ongoing computational and bioinformatics research across cancer genomics, infectious disease, and neurodegeneration.</p>
+
+    <div class="projects-grid">
+
+      <!-- EDIT: Project 1 -->
+      <div class="project-card fade-in">
+        <div class="project-card-inner">
+          <p class="project-status">Ongoing</p>
+          <h3 class="project-title">Whole-Exome Profiling of Somatic Alterations in Melanoma Using Paired Tissue Samples</h3>
+          <p class="project-desc">
+            Computational analysis of whole-exome sequencing data to identify somatic mutations
+            associated with melanoma progression and tumor biology.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">WES</span>
+            <span class="project-tag">Cancer Genomics</span>
+            <span class="project-tag">Somatic Mutations</span>
+            <span class="project-tag">Melanoma</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDIT: Project 2 -->
+      <div class="project-card fade-in">
+        <div class="project-card-inner">
+          <p class="project-status">Ongoing</p>
+          <h3 class="project-title">Designing a Multi-Epitope Vaccine Against Hantavirus</h3>
+          <p class="project-desc">
+            Immunoinformatics-based vaccine design involving epitope prediction, antigenicity assessment,
+            population coverage analysis, and in silico validation.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Immunoinformatics</span>
+            <span class="project-tag">Vaccine Design</span>
+            <span class="project-tag">Hantavirus</span>
+            <span class="project-tag">In Silico</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDIT: Project 3 -->
+      <div class="project-card fade-in">
+        <div class="project-card-inner">
+          <p class="project-status">Ongoing</p>
+          <h3 class="project-title">Molecular Docking and Computational Analysis of TARDBP in ALS</h3>
+          <p class="project-desc">
+            Molecular docking, structural analysis, and computational investigation of TARDBP-related
+            therapeutic candidates in Amyotrophic Lateral Sclerosis (ALS).
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Molecular Docking</span>
+            <span class="project-tag">ALS</span>
+            <span class="project-tag">TARDBP</span>
+            <span class="project-tag">Drug Discovery</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     PUBLICATIONS SECTION
+     EDIT: Add or update publications — toggle shows abstract
+     ================================================================ -->
+<section id="publications">
+  <div class="container">
+    <p class="section-label fade-in">Publications</p>
+    <h2 class="section-title fade-in">Peer-reviewed work.</h2>
+    <p class="section-subtitle fade-in">Click any publication to expand the abstract.</p>
+
+    <div class="publications-list">
+
+      <!-- EDIT: Publication 1 -->
+      <div class="pub-card fade-in" onclick="togglePub(this)">
+        <div class="pub-header">
+          <div>
+            <div class="pub-meta">
+              <span class="pub-year">March 2025</span>
+              <span class="pub-journal">Journal of University of Shanghai for Science and Technology</span>
+            </div>
+            <h3 class="pub-title">
+              A Review on Immunoinformatics-Driven Multi-Epitope Vaccine Approaches for Dengue Virus (DENV)
+            </h3>
+          </div>
+          <button class="pub-toggle" aria-label="Expand abstract">+</button>
+        </div>
+        <div class="pub-abstract">
+          <div class="pub-abstract-inner">
+            <p>
+              This review discusses the role of immunoinformatics and multi-epitope vaccine design in
+              overcoming the challenges associated with dengue virus vaccine development. Dengue virus
+              (DENV), with its four serotypes, poses a significant challenge for conventional vaccine
+              approaches due to the risk of antibody-dependent enhancement (ADE). The paper explores
+              how computational tools for epitope prediction, antigenicity scoring, population coverage
+              analysis, and molecular docking can be integrated into a rational vaccine design pipeline
+              to develop safe and broadly protective multi-epitope vaccine candidates against DENV.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDIT: Publication 2 -->
+      <div class="pub-card fade-in" onclick="togglePub(this)">
+        <div class="pub-header">
+          <div>
+            <div class="pub-meta">
+              <span class="pub-year">February 2025</span>
+              <span class="pub-journal">Journal of University of Shanghai for Science and Technology</span>
+            </div>
+            <h3 class="pub-title">
+              Biology and Damage Dynamics of the Banana Skipper, Erionota torus (Evans) (Lepidoptera: Hesperiidae)
+            </h3>
+          </div>
+          <button class="pub-toggle" aria-label="Expand abstract">+</button>
+        </div>
+        <div class="pub-abstract">
+          <div class="pub-abstract-inner">
+            <p>
+              This research investigates the life cycle, morphology, infestation patterns, and agricultural
+              impact of <em>Erionota torus</em> (Evans) on banana cultivation. The banana skipper butterfly
+              is a significant pest of banana plantations across South and Southeast Asia. The study
+              documents the biology of the pest — from egg to adult — and characterises the nature and
+              extent of foliar damage caused during larval feeding stages, providing insight into
+              infestation dynamics and their implications for crop management.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     FUTURE RESEARCH PLACEHOLDER SECTION
+     EDIT: Replace placeholder with actual future work when ready
+     ================================================================ -->
+<section id="future">
+  <div class="container">
+    <p class="section-label fade-in">Upcoming</p>
+    <h2 class="section-title fade-in">Future Research &amp;<br>Publications.</h2>
+
+    <div class="future-placeholder fade-in">
+      <div class="future-icon" aria-hidden="true">🔭</div>
+      <h3>Work in Progress</h3>
+      <p>
+        This section will showcase upcoming research manuscripts, preprints, conference abstracts,
+        and collaborative projects currently under development. Check back soon.
+      </p>
+      <!--
+        TO ADD FUTURE WORK:
+        Delete the .future-placeholder div above and uncomment the block below,
+        then add your entries.
+
+        <div class="future-grid">
+          <div class="project-card">
+            <div class="project-card-inner">
+              <p class="project-status">In Preparation</p>
+              <h3 class="project-title">Your Future Project Title</h3>
+              <p class="project-desc">Brief description of the project.</p>
+            </div>
+          </div>
+        </div>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     GITHUB SECTION
+     EDIT: Update GitHub URL once you have a profile
+     ================================================================ -->
+<section id="github">
+  <div class="container">
+    <div class="github-card fade-in">
+      <div class="github-icon" aria-hidden="true">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.42 7.86 10.95.58.1.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11.03 11.03 0 0 1 2.89-.39c.98.01 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.15v3.19c0 .31.21.66.8.55C20.2 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+        </svg>
+      </div>
+      <h3>GitHub Repository</h3>
+      <p>
+        Code, pipelines, and bioinformatics scripts from ongoing projects will be hosted here.
+        This section will link to repositories for reproducible research.
+      </p>
+      <!-- EDIT: Replace href once you have a GitHub account -->
+      <a href="#" class="btn btn-outline" aria-label="GitHub profile (coming soon)">
+        GitHub Profile — Coming Soon
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     CONTACT SECTION
+     ================================================================ -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label fade-in">Contact</p>
+    <h2 class="section-title fade-in">Let's connect.</h2>
+
+    <div class="contact-grid">
+      <div class="fade-in">
+        <p class="contact-intro">
+          I'm actively seeking research collaborations, internships, and opportunities in
+          bioinformatics, computational biology, and drug discovery. Whether you're a researcher,
+          professor, or industry professional — I'd love to hear from you.
+        </p>
+
+        <!-- EDIT: Update contact details -->
+        <div class="contact-links" role="list">
+          <a href="mailto:oindreebal@gmail.com" class="contact-link-item" role="listitem" aria-label="Send email">
+            <div class="icon" aria-hidden="true">✉</div>
+            <div>
+              <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:2px;font-family:var(--font-mono);letter-spacing:0.06em;">EMAIL</div>
+              oindreebal@gmail.com
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/oindree-b-294705216" target="_blank" rel="noopener" class="contact-link-item" role="listitem" aria-label="LinkedIn profile">
+            <div class="icon" aria-hidden="true" style="font-weight:700;font-size:0.9rem;">in</div>
+            <div>
+              <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:2px;font-family:var(--font-mono);letter-spacing:0.06em;">LINKEDIN</div>
+              Oindree Bal
+            </div>
+          </a>
+          <a href="tel:+916291004001" class="contact-link-item" role="listitem" aria-label="Phone number">
+            <div class="icon" aria-hidden="true">📞</div>
+            <div>
+              <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:2px;font-family:var(--font-mono);letter-spacing:0.06em;">PHONE</div>
+              +91 6291004001
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;">
+          <p style="font-family:var(--font-display);font-size:1.2rem;font-weight:300;margin-bottom:0.5rem;">Open to:</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem;">
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--text-secondary);">
+              <span style="color:var(--accent);font-size:1rem;">→</span> Research Internships
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--text-secondary);">
+              <span style="color:var(--accent);font-size:1rem;">→</span> Graduate Research Collaborations
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--text-secondary);">
+              <span style="color:var(--accent);font-size:1rem;">→</span> Joint Publication Projects
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--text-secondary);">
+              <span style="color:var(--accent);font-size:1rem;">→</span> Bioinformatics & Computational Biology
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--text-secondary);">
+              <span style="color:var(--accent);font-size:1rem;">→</span> Drug Discovery Projects
+            </li>
+            <li style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--text-secondary);">
+              <span style="color:var(--accent);font-size:1rem;">→</span> Mentorship & Academic Connections
+            </li>
+          </ul>
+          <div style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--border);">
+            <a href="Oindree_Bal_CV.pdf" download class="btn btn-primary" style="width:100%;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Full CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     FOOTER
+     ================================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-left">Oindree <span>Bal</span> · Bioinformatics Researcher</p>
+      <p class="footer-right">Bengaluru, Karnataka, India · oindreebal@gmail.com</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+<!-- ================================================================
+     JAVASCRIPT
+     ================================================================ -->
+<script>
+/* ——————————————————————————————————————————————
+   THEME TOGGLE (Dark / Light Mode)
+—————————————————————————————————————————————— */
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon   = document.getElementById('theme-icon');
+const html        = document.documentElement;
+
+// Check saved preference
+const savedTheme = localStorage.getItem('theme') || 'dark';
+html.setAttribute('data-theme', savedTheme);
+themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+
+themeToggle.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  const next    = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  themeIcon.textContent = next === 'dark' ? '🌙' : '☀️';
+});
+
+/* ——————————————————————————————————————————————
+   MOBILE NAVIGATION
+—————————————————————————————————————————————— */
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileClose = document.getElementById('mobile-close');
+
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+mobileClose.addEventListener('click', closeMobileMenu);
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ——————————————————————————————————————————————
+   SCROLL-TO-TOP BUTTON
+—————————————————————————————————————————————— */
+const scrollTopBtn = document.getElementById('scroll-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
+}, { passive: true });
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ——————————————————————————————————————————————
+   FADE-IN ON SCROLL (Intersection Observer)
+—————————————————————————————————————————————— */
+const fadeEls = document.querySelectorAll('.fade-in');
+
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      // Stagger sibling elements for a cascade effect
+      const siblings = entry.target.parentElement.querySelectorAll('.fade-in');
+      let delay = 0;
+      siblings.forEach((sib, idx) => {
+        if (sib === entry.target) delay = idx * 60;
+      });
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, delay);
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+fadeEls.forEach(el => fadeObserver.observe(el));
+
+/* ——————————————————————————————————————————————
+   ANIMATED STAT COUNTERS
+—————————————————————————————————————————————— */
+function animateCounter(el) {
+  const target  = parseFloat(el.dataset.target);
+  const decimal = parseInt(el.dataset.decimal || 0);
+  const prefix  = el.dataset.prefix || '';
+  const suffix  = el.dataset.suffix || '';
+  const duration = 1800;
+  const start    = performance.now();
+
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const ease     = 1 - Math.pow(1 - progress, 3); // cubic ease out
+    const current  = target * ease;
+    el.textContent = prefix + current.toFixed(decimal) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = prefix + target.toFixed(decimal) + suffix;
+  }
+  requestAnimationFrame(step);
+}
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.target.dataset.target) {
+      animateCounter(entry.target);
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll('.stat-value[data-target]').forEach(el => statObserver.observe(el));
+
+/* ——————————————————————————————————————————————
+   ANIMATED SKILL BARS
+—————————————————————————————————————————————— */
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.skill-fill').forEach((bar, i) => {
+        setTimeout(() => {
+          bar.style.width = bar.dataset.width + '%';
+        }, i * 120);
+      });
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.skills-panel').forEach(el => skillObserver.observe(el));
+
+/* ——————————————————————————————————————————————
+   PUBLICATION EXPAND / COLLAPSE
+—————————————————————————————————————————————— */
+function togglePub(card) {
+  const wasExpanded = card.classList.contains('expanded');
+  // Close all
+  document.querySelectorAll('.pub-card').forEach(c => c.classList.remove('expanded'));
+  // Open this one if it wasn't already open
+  if (!wasExpanded) card.classList.add('expanded');
+}
+
+/* ——————————————————————————————————————————————
+   RESEARCH INTEREST TAGS — Toggle active class
+—————————————————————————————————————————————— */
+document.querySelectorAll('.tag').forEach(tag => {
+  tag.addEventListener('click', () => tag.classList.toggle('active'));
+  tag.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      tag.classList.toggle('active');
+    }
+  });
+});
+
+/* ——————————————————————————————————————————————
+   MOLECULAR NETWORK CANVAS ANIMATION
+   (animated nodes + edges in hero background)
+—————————————————————————————————————————————— */
+(function() {
+  const canvas = document.getElementById('molecular-canvas');
+  const ctx    = canvas.getContext('2d');
+
+  let W, H, nodes, animId;
+
+  const NODE_COUNT = 55;
+  const LINK_DIST  = 150;
+  const SPEED      = 0.28;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function randomNode() {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = SPEED * (0.3 + Math.random() * 0.7);
+    return {
+      x:  Math.random() * W,
+      y:  Math.random() * H,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      r:  1.5 + Math.random() * 2.5,
+    };
+  }
+
+  function init() {
+    resize();
+    nodes = Array.from({ length: NODE_COUNT }, randomNode);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Resolve theme-aware color once per frame
+    const isDark   = document.documentElement.getAttribute('data-theme') !== 'light';
+    const nodeColor = isDark ? 'rgba(20,184,166,0.75)' : 'rgba(13,122,112,0.65)';
+    const lineColor = isDark ? 'rgba(20,184,166,' : 'rgba(13,122,112,';
+
+    // Update positions
+    for (const n of nodes) {
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+    }
+
+    // Draw edges
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx   = nodes[i].x - nodes[j].x;
+        const dy   = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < LINK_DIST) {
+          const alpha = (1 - dist / LINK_DIST) * 0.35;
+          ctx.beginPath();
+          ctx.strokeStyle = lineColor + alpha + ')';
+          ctx.lineWidth   = 0.8;
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes
+    for (const n of nodes) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = nodeColor;
+      ctx.fill();
+    }
+
+    animId = requestAnimationFrame(draw);
+  }
+
+  // Pause animation when tab is hidden to save CPU
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      cancelAnimationFrame(animId);
+    } else {
+      animId = requestAnimationFrame(draw);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    resize();
+    // Clamp nodes inside new bounds
+    for (const n of nodes) {
+      n.x = Math.min(n.x, W);
+      n.y = Math.min(n.y, H);
+    }
+  });
+
+  init();
+  draw();
+})();
+
+</script>
+
+</body>
+</html>
